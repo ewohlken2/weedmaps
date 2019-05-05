@@ -1,11 +1,13 @@
 import fetchMock from 'fetch-mock';
+import get from 'lodash.get';
+import 'isomorphic-fetch';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
-import 'isomorphic-fetch';
 import * as actions from '.';
 import * as types from '../constants/ActionTypes';
-import * as config from '../constants/config';
+import config from '../constants/config';
 import mockResponse from '../__test__/mocks/location-mock.json';
+import mockListing from '../__test__/mocks/listing-mock.json';
 import defaultTestCoords from '../__test__/mocks/coord-mock.json';
 
 const mockStore = configureMockStore([thunk]);
@@ -42,7 +44,6 @@ describe('actions', () => {
     });
     it('dispatches Recieve when fetch is complete', () => {
       const store = mockStore();
-      console.log(mockResponse);
       fetchMock.get(
         `https://${
           config.API_HOST
@@ -51,18 +52,47 @@ describe('actions', () => {
       );
 
       store.dispatch(actions.locate(defaultTestCoords)).then(() => {
-        console.log(store.getActions());
-        // expect(store.getActions()).toEqual([
-        //   {
-        //     type: types.REQUEST,
-        //     coords: defaultTestCoords
-        //   },
-        //   {
-        //     type: types.RECEIVE,
-        //     location: mockResponse.data.location,
-        //     regions: mockResponse.data.regions
-        //   }
-        // ]);
+        expect(store.getActions()).toEqual([
+          {
+            type: types.REQUEST,
+            coords: defaultTestCoords
+          },
+          {
+            type: types.RECEIVE,
+            location: mockResponse.data.location,
+            regions: mockResponse.data.regions
+          }
+        ]);
+      });
+    });
+  });
+
+  describe('getListingDetails', () => {
+    afterEach(() => {
+      fetchMock.reset();
+      fetchMock.restore();
+    });
+
+    it('dispatches Recieve Listing when fetch is complete', () => {
+      const store = mockStore();
+      const id = get(mockListing, 'data.listings.wmid');
+
+      fetchMock.get(
+        `https://${config.API_HOST}/wm/v2/listings/${id}`,
+        mockListing
+      );
+
+      store.dispatch(actions.getListingDetails(id)).then(() => {
+        expect(store.getActions()).toEqual([
+          {
+            type: types.REQUEST_LISTING,
+            listingId: id
+          },
+          {
+            type: types.RECEIVE_LISTING,
+            listing: mockListing.data.listing
+          }
+        ]);
       });
     });
   });

@@ -1,23 +1,41 @@
-import React from "react";
-import Avatar from "../avatar";
-import styled from "styled-components";
-import get from "lodash.get";
+import React from 'react';
+import PropTypes from 'prop-types';
+import get from 'lodash.get';
+import { Link } from 'react-router-dom';
+import Avatar from '../avatar';
+import { TextContent } from '../../global.styles';
+import RatingStars from '../rating_stars';
+import { CardWrapper, InfoWrapper, CardHeading } from './styles';
 
-const CardWrapper = styled.div`
-  width: 100%;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-`;
+const formatDistance = distance => {
+  const distanceRounded = Math.round(
+    distance >= 1 ? distance.toFixed(0) : distance.toFixed(1)
+  );
+
+  return `${distanceRounded}mi`;
+};
 
 const ListingCard = ({ listing }) => (
-  <CardWrapper>
-    <Avatar img={`${get(listing, "avatar_image.small_url")}`} />
-    <div> {listing.name} </div>
-    <div> {listing.city} </div>
-    <div> {listing.rating} </div>
-  </CardWrapper>
+  <Link to={`${listing.wmid}`}>
+    <CardWrapper>
+      <Avatar img={`${get(listing, 'avatar_image.small_url')}`} />
+      <InfoWrapper>
+        <TextContent>
+          {listing.city}, {listing.state} | {formatDistance(listing.distance)}
+        </TextContent>
+        <CardHeading> {listing.name} </CardHeading>
+        <RatingStars rating={listing.rating} />
+      </InfoWrapper>
+    </CardWrapper>
+  </Link>
 );
+
+ListingCard.propTypes = {
+  listing: PropTypes.object
+};
+
+ListingCard.defaultProps = {
+  listing: {}
+};
 
 export default ListingCard;

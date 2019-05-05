@@ -6,55 +6,68 @@ import { locate } from '../../actions';
 import ListingCards from '../listing_cards';
 import Locate from '../../icons/locate';
 import MapPin from '../../icons/map-pin';
+import { Route } from 'react-router-dom';
+import defaultTestCoords from '../../__test__/mocks/coord-mock.json';
+import { AppContent, AppBackground } from '../App.styles';
 import {
-  AppContent,
   ListingGroups,
   HeroSection,
   ContentContainer,
   LocationSection,
-  TextContent,
   LocateButton
-} from '../App.styles';
+} from './style';
+import ListingDetailPane from '../listing_detail_pane';
+import { Delivery } from '../../icons/delivery';
+import { Dispensary } from '../../icons/dispensary';
+import { Doctor } from '../../icons/doctor';
+import { colors, Heading2, TextContent } from '../../global.styles';
 
-const regionTypes = ['delivery', 'dispensary', 'doctor'];
+const regionTypes = ['dispensary', 'delivery', 'doctor'];
 const regionLabels = {
-  delivery: 'Deliveries',
-  dispensary: 'Dispensaries',
+  delivery: 'Delivery Services',
+  dispensary: 'Dispensary Storefronts',
   doctor: 'Doctors'
 };
+const regionIcons = {
+  delivery: Delivery,
+  dispensary: Dispensary,
+  doctor: Doctor
+};
+
+function isEmpty(obj) {
+  for (var key in obj) {
+    if (obj.hasOwnProperty(key)) return false;
+  }
+  return true;
+}
 
 export class ListingPage extends Component {
   constructor(props) {
     super();
-    this.state = {
-      loadingTimer: 0
-    };
   }
 
   locateMe() {
     const { dispatch } = this.props;
 
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
-        dispatch(locate(position.coords));
-      });
+      dispatch(locate(defaultTestCoords));
     }
   }
 
-  getLabel(listings, label) {
+  getLabel(listings, label, Icon) {
     if (get(listings, 'listings').length) {
       return (
-        <div key={label}>
-          <strong> {label} </strong>
-        </div>
+        <React.Fragment key={label}>
+          <Icon height="24" width="24" fill={colors.darkText} />
+          <span> {label} </span>
+        </React.Fragment>
       );
     }
     return <div />;
   }
 
   render() {
-    const { isLocating, location, regions, error } = this.props;
-
+    const { isLocating, location, regions, error, match } = this.props;
     return (
       <React.Fragment>
         <HeroSection>
@@ -77,33 +90,37 @@ export class ListingPage extends Component {
             </TextContent>
           </ContentContainer>
         </HeroSection>
-        <AppContent>
-          {error && <div> {error.message} </div>}
-          {regions && (
-            <React.Fragment>
-              {regionTypes.map(regionType => (
-                <ListingGroups key={regionType}>
-                  <h2>
-                    {this.getLabel(
-                      regions[regionType],
-                      regionLabels[regionType]
-                    )}
-                  </h2>
-                  <ListingCards
-                    listings={get(regions[regionType], 'listings')}
-                  />
-                </ListingGroups>
-              ))}
-            </React.Fragment>
-          )}
-        </AppContent>
+        <AppBackground>
+          <AppContent>
+            {error && <div> {error.message} </div>}
+            {regions && !isEmpty(regions) && (
+              <React.Fragment>
+                {regionTypes.map(regionType => (
+                  <ListingGroups key={regionType}>
+                    <Heading2>
+                      {this.getLabel(
+                        regions[regionType],
+                        regionLabels[regionType],
+                        regionIcons[regionType]
+                      )}
+                    </Heading2>
+                    <ListingCards
+                      listings={get(regions[regionType], 'listings')}
+                    />
+                  </ListingGroups>
+                ))}
+              </React.Fragment>
+            )}
+          </AppContent>
+        </AppBackground>
+        <Route path={`${match.url}:listingId`} component={ListingDetailPane} />
       </React.Fragment>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return state.location;
+const mapStateToProps = (state, ownProps) => {
+  return { ...state.location, match: ownProps.match };
 };
 
 ListingPage.propTypes = {

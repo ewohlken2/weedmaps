@@ -1,0 +1,97 @@
+{
+  "data": {
+    "listing": {
+      "id": 600,
+      "name": "Puffy Delivery",
+      "slug": "rite-greens-santa-ana",
+      "state": "CA",
+      "city": "Irvine",
+      "type": "delivery",
+      "wmid": 493289257,
+      "latitude": 33.673239,
+      "longitude": -117.762522,
+      "web_url": "https://weedmaps.com/deliveries/rite-greens-santa-ana",
+      "package_level": "listing_plus",
+      "feature_order": 6,
+      "ranking": 4.6137514338402,
+      "rating": 4.65714285714286,
+      "reviews_count": 756,
+      "avatar_image": {
+        "small_url": "https://images.weedmaps.com/deliveries/000/000/600/avatar/square_fill/1554496961-Puffy_Logo.JPG",
+        "original_url": "https://images.weedmaps.com/deliveries/000/000/600/avatar/original/1554496961-Puffy_Logo.JPG"
+      },
+      "license_type": "hybrid",
+      "address": "",
+      "distance": null,
+      "zip_code": "92618",
+      "timezone": "America/Los_Angeles",
+      "intro_body": "\u003cp\u003eWelcome to Puffy Delivery!\u003c/p\u003e \u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e \u003cp\u003ePuffy Delivery is an online cannabis collective for medical and recreational cannabis users that offers cannabis delivery directly to your front door.\u003c/p\u003e \u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e \u003cp\u003ePuffy Delivery only carries products that have been lab tested and meet all state packaging requirements. We are a fully licensed cannabis collective and operate legally under California state law.\u003c/p\u003e \u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e \u003cp\u003eWe offer same-day delivery to Los Angeles, Orange County, San Fernando Valley, San Francisco, Sacramento, and San Diego.\u003c/p\u003e \u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e \u003cp\u003eOur ETAs are based on location and time. We will try our best to provide an accurate ETA but please note it may be subject to change at any time.\u003c/p\u003e \u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e \u003cp\u003eYou can easily process your order through Weedmaps! If you would like to text in your order, please send the first-time customer required information to the number listed, and a Puffy representative will be in contact with you once your profile has been created.\u003c/p\u003e \u003cp\u003e \u003c/p\u003e \u003cp\u003e**prices do not include taxes\u003c/p\u003e",
+      "static_map_url": "https://staticmap.weedmaps.com/static_map/13/33.673239/-117.762522/402/147/map.png",
+      "open_now": true,
+      "closes_in": 512,
+      "todays_hours_str": " 9:00am - 10:00pm",
+      "min_age": 18,
+      "menu_items_count": 829,
+      "verified_menu_items_count": 4,
+      "endorsement_badge_count": 0,
+      "is_published": true,
+      "online_ordering": {
+        "enabled_for_pickup": false,
+        "enabled_for_delivery": true
+      },
+      "retailer_services": ["delivery"],
+      "description": "\u003cp\u003ePuffy Delivery is fully compliant with Prop 64 and pursuant to California state law to charge taxes on all cannabis purchases. No customer is entirely exempt from taxes.  \u003c/p\u003e \u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e \u003cp\u003eWe offer FREE DELIVERY on orders with a subtotal of over $50 (before taxes). For orders under $50 we charge an $8 flat-rate shipping fee.\u003c/p\u003e \u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e \u003cp\u003ePlease note that all items must be taxed regardless of discounts or promotions.\u003c/p\u003e \u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e \u003cp\u003e**Unfortunately, we can only accept one discount per order, per day.\u003c/p\u003e \u003cp\u003e \u003c/p\u003e \u003cp\u003e***The following brands CANNOT be discounted: Alien Labs, Cookies, and Connected.\u003c/p\u003e \u003cp\u003e \u003c/p\u003e",
+      "first_time_announcement": "\u003cp\u003ePlease text the following information:\u003c/p\u003e \u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e \u003cp\u003e- Picture of valid government issued ID or passport\u003c/p\u003e \u003cp\u003e- Photo of yourself holding your ID for verification\u003c/p\u003e \u003cp\u003e- Full delivery address with city and zip code\u003c/p\u003e \u003cp\u003e\u003cbr\u003e\u003cbr\u003e\u003c/p\u003e \u003cp\u003e** first-time customers receive 30% off the order.\u003c/p\u003e",
+      "announcement": "\u003cp\u003ePlease note that our menu lists inventory from all of our California hubs. Once you submit your order via Weedmaps a Puffy representative will determine inventory in your area, and contact you to finalize your order prior to shipment/delivery.\u003c/p\u003e \u003cp\u003e \u003c/p\u003e \u003cp\u003e \u003c/p\u003e",
+      "country": "",
+      "phone_number": "714-418-4877",
+      "email": "support@puffydelivery.com",
+      "website": "http://puffydelivery.com",
+      "has_handicap_access": true,
+      "has_photos": true,
+      "has_videos": true,
+      "accepts_credit_cards": true,
+      "has_testing": false,
+      "is_recreational": false,
+      "has_atm": false,
+      "has_security_guard": false,
+      "is_verified_seller": true,
+      "has_endorsement_badges": false,
+      "has_age_gate": false,
+      "license_number": "A10-17-0000087-TEMP",
+      "licenses": [
+        { "type": "Adult-Use Nonstorefront", "number": "A10-17-0000087-TEMP" }
+      ],
+      "business_hours": {
+        "sunday": { "open": "9:00am", "close": "10:00pm" },
+        "monday": { "open": "9:00am", "close": "10:00pm" },
+        "tuesday": { "open": "9:00am", "close": "10:00pm" },
+        "wednesday": { "open": "9:00am", "close": "10:00pm" },
+        "thursday": { "open": "9:00am", "close": "10:00pm" },
+        "friday": { "open": "9:00am", "close": "10:00pm" },
+        "saturday": { "open": "9:00am", "close": "10:00pm" }
+      },
+      "social": {
+        "facebook_id": "",
+        "instagram_id": "puffydelivery",
+        "twitter_id": "",
+        "youtube_ids": ["vYrQpkRaJrk"]
+      },
+      "region": {
+        "id": 166,
+        "name": "Irvine",
+        "slug": "lake-forest",
+        "region_path": "united-states/california/lake-forest"
+      },
+      "member_since": "2011",
+      "price_aggregations": {
+        "unit": { "units": "1", "min": 1.0, "max": 160.0 },
+        "gram": [
+          { "units": "1/2", "min": 17.5, "max": 75.0 },
+          { "units": "1", "min": 20.0, "max": 76.0 }
+        ],
+        "ounce": [{ "units": "1/8", "min": 7.5, "max": 70.0 }]
+      }
+    }
+  }
+}
