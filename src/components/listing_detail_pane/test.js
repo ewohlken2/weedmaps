@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { MemoryRouter, Route } from 'react-router-dom';
 import testListing from '../../__test__/mocks/listing-mock.json';
-import { ErrorWrapper } from './styles';
+import { ErrorWrapper } from './style';
 
 describe('<ListingDetailPane />', () => {
   const initialState = {

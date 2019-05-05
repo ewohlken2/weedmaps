@@ -25,6 +25,10 @@ export const DetailPaneBox = styled.div`
   background: white;
   position: relative;
 
+  ${media.lg`
+    max-width: 800px;
+  `}
+
   > div {
     overflow: auto;
     max-height: 75vh;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { fonts, colors } from '../../global.styles';
+import { colors } from '../../global.styles';
 
 export const ListingGroups = styled.div`
   h2 {

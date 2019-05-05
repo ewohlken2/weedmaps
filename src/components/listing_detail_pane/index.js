@@ -14,7 +14,7 @@ import {
   TextContentWrapper,
   SectionWrapper,
   ErrorWrapper
-} from './styles';
+} from './style';
 
 export class ListingDetailPane extends Component {
   constructor() {
